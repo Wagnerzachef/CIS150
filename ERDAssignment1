@@ -1,0 +1,36 @@
+# The begining of the script
+Child
+-----
+ChildName string PK
+ChildAge int
+ChildBirthdate datetime
+ChildAllergies string
+ChildSpecialInstructions string
+ChildParent string
+ChildDropOff string
+ChildPickUp string
+
+
+Parent
+-----
+ParentName string INDEX
+ParentAddress string
+ChildName string FK >-< Child.ChildName
+ParentCo-Parent string
+ParentCarMake/Model/Color string
+ParentLicensePlateNumber varchar(7)
+ParentDriversLicenseNumber varchar(17)
+
+Staff
+-----
+StaffName string INDEX
+StaffAddress string
+StaffChildrenResponsibleFor string FK -< Child.ChildName
+StaffPayRate moneyperhour
+
+SchoolSupplies
+-----
+SupplyBooks varchar(13)
+SupplyTech varchar
+SupplyPens/Pencils/Crayons varchar(10)
+SupplyChildAssignedTo string FK >- Child.ChildName
