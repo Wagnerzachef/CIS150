@@ -1,36 +1,36 @@
 # The begining of the script
 Child
 -----
-ChildName string PK
-ChildAge int
+ChildName varchar(255) PK
+ChildAge int(2)
 ChildBirthdate datetime
 ChildAllergies string
 ChildSpecialInstructions string
-ChildParent string
+ChildParent varchar(255)
 ChildDropOff string
 ChildPickUp string
 
 
 Parent
 -----
-ParentName string INDEX
-ParentAddress string
-ChildName string FK >-< Child.ChildName
-ParentCo-Parent string
+ParentName varchar(255) pk FK >-< Child.ChildParent
+ParentAddress varchar(95)
+ChildName varchar(255)
+ParentCo-Parent varchar(255)
 ParentCarMake/Model/Color string
 ParentLicensePlateNumber varchar(7)
 ParentDriversLicenseNumber varchar(17)
 
 Staff
 -----
-StaffName string INDEX
-StaffAddress string
-StaffChildrenResponsibleFor string FK -< Child.ChildName
-StaffPayRate moneyperhour
+StaffName varchar(255) INDEX
+StaffAddress varchar(95)
+StaffChildrenResponsibleFor varchar(255) FK -< Child.ChildName
+StaffPayRate int(10)
 
 SchoolSupplies
 -----
 SupplyBooks varchar(13)
-SupplyTech varchar
+SupplyTech varchar(20)
 SupplyPens/Pencils/Crayons varchar(10)
-SupplyChildAssignedTo string FK >- Child.ChildName
+SupplyChildAssignedTo varchar(255) FK >- Child.ChildName
