@@ -1,0 +1,5 @@
+Some of the methods I found that can help secure an SQLite database involve authenticating user, using passwords, encryption, and making sure that the inputs are trusted. 
+Authenticating the user seems like the least reliable option, because you could easily forget your login or forget to log out and let people look through your computer with access to the database.
+Using passwords is safer than just authenticating the user, but the passwords used could be forgotten or hacked.
+Encryption is the safest method when combined with the previous two. You can put a username and password on a database, then encrypt it, then create a new password to unlock the encrypted database.
+The last method is to make sure that any untrusted inputs are limited in their capabilities and can't corrupt the database. This can be done by limiting the length of inputs and setting the SQLite DBCONFIG DEFENSIVE flag to prevent database corruption through input commands.
